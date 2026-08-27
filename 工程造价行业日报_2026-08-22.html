@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>浙江省工程造价行业日报 2026-08-22</title>
+<style>
+
+/* ============================================
+   Design System - 浙江省工程造价行业日报 V2
+   Theme: Light + Tech + Architecture
+   ============================================ */
+
+/* --- Design Tokens --- */
+:root {
+  --bg-body: #f0f4f8;
+  --bg-card: #ffffff;
+  --bg-hero: linear-gradient(135deg, #f0f7ff 0%, #e8f0fe 50%, #f8fafc 100%);
+  --bg-nav: rgba(255,255,255,0.92);
+  --color-primary: #1e40af;
+  --color-primary-light: #3b82f6;
+  --color-accent: #b45309;
+  --color-accent-light: #d97706;
+  --color-text: #0f172a;
+  --color-text-secondary: #475569;
+  --color-text-muted: #94a3b8;
+  --color-border: #e2e8f0;
+  --color-border-hover: #93c5fd;
+  --radius: 12px;
+  --radius-sm: 8px;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.07);
+  --shadow-lg: 0 8px 24px rgba(0,0,0,0.09);
+  --shadow-card-hover: 0 8px 28px rgba(30,64,175,0.1);
+  --transition-fast: 150ms ease;
+  --transition-normal: 300ms ease;
+  --s1: #2563eb;
+  --s2: #0d9488;
+  --s3: #7c3aed;
+  --s4: #d97706;
+  --s5: #059669;
+  --blueprint: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Crect width='80' height='80' fill='none'/%3E%3Cline x1='0' y1='0' x2='80' y2='0' stroke='%23c7d2fe' stroke-width='0.4'/%3E%3Cline x1='0' y1='40' x2='80' y2='40' stroke='%23c7d2fe' stroke-width='0.2' stroke-dasharray='4,4'/%3E%3Cline x1='0' y1='0' x2='0' y2='80' stroke='%23c7d2fe' stroke-width='0.4'/%3E%3Cline x1='40' y1='0' x2='40' y2='80' stroke='%23c7d2fe' stroke-width='0.2' stroke-dasharray='4,4'/%3E%3C/svg%3E");
+  --blueprint-hero: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Crect width='120' height='120' fill='none'/%3E%3Cline x1='0' y1='0' x2='120' y2='0' stroke='%23bfdbfe' stroke-width='0.6'/%3E%3Cline x1='0' y1='60' x2='120' y2='60' stroke='%23bfdbfe' stroke-width='0.25' stroke-dasharray='8,4'/%3E%3Cline x1='0' y1='0' x2='0' y2='120' stroke='%23bfdbfe' stroke-width='0.6'/%3E%3Cline x1='60' y1='0' x2='60' y2='120' stroke='%23bfdbfe' stroke-width='0.25' stroke-dasharray='8,4'/%3E%3Cline x1='0' y1='120' x2='120' y2='0' stroke='%23dbeafe' stroke-width='0.12'/%3E%3C/svg%3E");
+}
+
+/* --- Base Reset --- */
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  font-family: "Inter","Microsoft YaHei","PingFang SC",system-ui,sans-serif;
+  background: var(--bg-body);
+  background-image: var(--blueprint);
+  background-attachment: fixed;
+  color: var(--color-text);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* --- Progress Bar --- */
+#progress-bar {
+  position: fixed; top:0; left:0; height:3px;
+  background: linear-gradient(90deg, var(--color-primary-light), var(--s2));
+  z-index: 9999; width:0; transition: width 0.15s;
+}
+
+/* --- Hero Section --- */
+.hero {
+  background: var(--bg-hero);
+  background-image: var(--blueprint-hero);
+  border-bottom: 2px solid var(--color-accent-light);
+  padding: 52px 24px 40px; text-align: center;
+  position: relative; overflow: hidden;
+}
+.hero-decoration {
+  position: absolute; right: 4%; top: 50%;
+  transform: translateY(-50%);
+  width: 160px; height: 160px; opacity: 0.07;
+  color: var(--color-primary);
+  pointer-events: none;
+}
+.hero h1 {
+  font-size: clamp(1.5rem,4vw,2.2rem);
+  color: var(--color-primary);
+  letter-spacing: 3px; margin-bottom: 8px;
+  position: relative; z-index:1; font-weight: 700;
+}
+.hero .date-row {
+  color: var(--color-text-secondary); font-size: 0.9rem;
+  margin-bottom: 28px; position: relative; z-index:1;
+}
+
+/* --- Stats Grid --- */
+.stats-grid {
+  display: grid; grid-template-columns: repeat(4,1fr);
+  gap: 14px; max-width: 860px; margin: 0 auto;
+  position: relative; z-index:1;
+}
+.stat-card {
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(6px);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius); padding: 18px 10px;
+  text-align: center; cursor: pointer;
+  transition: all var(--transition-normal);
+}
+.stat-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-border-hover);
+}
+.stat-card .stat-num {
+  font-size: 2.2rem; font-weight: 800; line-height: 1;
+  color: var(--color-primary);
+}
+.stat-card:nth-child(2) .stat-num { color: var(--s2); }
+.stat-card:nth-child(3) .stat-num { color: var(--s5); }
+.stat-card:nth-child(4) .stat-num { color: var(--s3); }
+.stat-card:nth-child(5) .stat-num { color: var(--s4); }
+.stat-card .stat-label {
+  font-size: 0.78rem; color: var(--color-text-secondary);
+  margin-top: 6px; font-weight: 500;
+}
+
+/* --- Navigation --- */
+.nav-bar {
+  background: var(--bg-nav);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--color-border);
+  padding: 10px 24px;
+  display: flex; gap: 10px; overflow-x: auto;
+  position: sticky; top: 0; z-index:100;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.nav-bar::-webkit-scrollbar { display: none; }
+.nav-bar a {
+  color: var(--color-text-secondary); text-decoration: none;
+  font-size: 0.85rem; font-weight: 700;
+  padding: 8px 16px; border-radius: 24px; white-space: nowrap;
+  border: 1px solid transparent;
+  transition: all var(--transition-fast);
+  flex-shrink: 0;
+}
+.nav-bar a:hover {
+  color: var(--color-primary);
+  background: rgba(37,99,235,0.06);
+  border-color: rgba(37,99,235,0.15);
+}
+.nav-bar a.active {
+  color: #fff;
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+/* --- Section Anchors & Titles --- */
+.section-anchor { display:block; visibility:hidden; height:0; }
+.section-title {
+  font-size: 1.25rem; color: var(--color-text);
+  margin: 40px 0 20px; padding-left: 16px;
+  border-left: 4px solid var(--color-primary);
+  display: flex; align-items: center; gap: 10px;
+  font-weight: 700;
+}
+.section-title .sec-icon {
+  width: 22px; height: 22px; flex-shrink: 0;
+}
+.section-title .sec-count {
+  font-size: 0.78rem; color: #fff;
+  background: var(--color-primary);
+  padding: 2px 10px; border-radius: 12px;
+  font-weight: 600;
+}
+.section-s2 .section-title { border-left-color: var(--s2); }
+.section-s2 .sec-count { background: var(--s2); }
+.section-s3 .section-title { border-left-color: var(--s3); }
+.section-s3 .sec-count { background: var(--s3); }
+.section-s4 .section-title { border-left-color: var(--s4); }
+.section-s4 .sec-count { background: var(--s4); }
+.section-s5 .section-title { border-left-color: var(--s5); }
+.section-s5 .sec-count { background: var(--s5); }
+
+/* --- Cards Grid --- */
+.cards-grid {
+  display: grid; grid-template-columns: repeat(3,1fr);
+  gap: 18px;
+}
+
+/* --- Card Component --- */
+.news-card {
+  background: var(--bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius); padding: 20px;
+  transition: all var(--transition-normal);
+  opacity: 0; transform: translateY(24px);
+  cursor: pointer; position: relative;
+}
+.news-card.visible { opacity:1; transform: translateY(0); }
+.news-card:hover {
+  border-color: var(--color-border-hover);
+  box-shadow: var(--shadow-card-hover);
+  transform: translateY(-3px);
+}
+.news-card[data-section="\4e00"]:hover { border-left: 3px solid var(--s1); }
+.news-card[data-section="\4e8c"]:hover { border-left: 3px solid var(--s2); }
+.news-card[data-section="\4e09"]:hover { border-left: 3px solid var(--s3); }
+.news-card[data-section="\56db"]:hover { border-left: 3px solid var(--s4); }
+.news-card[data-section="\4e94"]:hover { border-left: 3px solid var(--s5); }
+
+.card-header {
+  display: flex; justify-content: space-between;
+  align-items: center; margin-bottom: 10px;
+}
+.global-id {
+  font-size: 0.72rem; font-weight: 700;
+  color: var(--color-primary);
+  background: rgba(37,99,235,0.08);
+  padding: 2px 8px; border-radius: 6px;
+}
+.section-chip {
+  font-size: 0.68rem; padding: 2px 8px;
+  border-radius: 6px; font-weight: 500;
+}
+.chip-s1 { background: rgba(37,99,235,0.08); color: var(--s1); }
+.chip-s2 { background: rgba(13,148,136,0.08); color: var(--s2); }
+.chip-s3 { background: rgba(124,58,237,0.08); color: var(--s3); }
+.chip-s4 { background: rgba(217,119,6,0.08); color: var(--s4); }
+.chip-s5 { background: rgba(5,150,105,0.08); color: var(--s5); }
+
+/* --- Tags --- */
+.card-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 10px; }
+.tag {
+  font-size: 0.7rem; padding: 3px 10px; border-radius: 6px;
+  font-weight: 500; border: 1px solid; line-height: 1.4;
+  min-height: 24px; display: inline-flex; align-items: center;
+}
+.tag-coral   { background:#fff5f5; color:#e53e3e; border-color:#fed7d7; }
+.tag-rose    { background:#fff1f2; color:#e11d48; border-color:#fecdd3; }
+.tag-orange  { background:#fff7ed; color:#ea580c; border-color:#fed7aa; }
+.tag-amber   { background:#fffbeb; color:#b45309; border-color:#fde68a; }
+.tag-green   { background:#f0fdf4; color:#16a34a; border-color:#bbf7d0; }
+.tag-emerald { background:#ecfdf5; color:#059669; border-color:#a7f3d0; }
+.tag-teal    { background:#f0fdfa; color:#0d9488; border-color:#99f6e4; }
+.tag-cyan    { background:#ecfeff; color:#0891b2; border-color:#a5f3fc; }
+.tag-sky     { background:#f0f9ff; color:#0284c7; border-color:#bae6fd; }
+.tag-blue    { background:#eff6ff; color:#2563eb; border-color:#bfdbfe; }
+.tag-indigo  { background:#eef2ff; color:#4338ca; border-color:#c7d2fe; }
+.tag-violet  { background:#f5f3ff; color:#7c3aed; border-color:#ddd6fe; }
+.tag-purple  { background:#faf5ff; color:#9333ea; border-color:#e9d5ff; }
+.tag-slate   { background:#f8fafc; color:#475569; border-color:#e2e8f0; }
+.deadline-tag {
+  font-size: 0.7rem; padding: 3px 10px; border-radius: 6px;
+  font-weight: 600; border: 1px solid;
+  background: #fffbeb; color: #b45309; border-color: #fde68a;
+}
+.deadline-tag.deadline-orange {
+  background: #fff7ed; color: #c2410c; border-color: #fb923c;
+  font-weight: 700;
+}
+
+/* --- Card Content --- */
+.card-title {
+  font-size: 0.95rem; font-weight: 600; line-height: 1.55;
+  margin-bottom: 8px;
+}
+.card-title a {
+  color: var(--color-text); text-decoration: none;
+  transition: color var(--transition-fast);
+}
+.card-title a:hover { color: var(--color-primary); }
+.card-summary {
+  font-size: 0.82rem; color: var(--color-text-secondary);
+  line-height: 1.7; margin-bottom: 12px;
+}
+.card-footer {
+  display: flex; justify-content: space-between; align-items: center;
+  padding-top: 10px; border-top: 1px solid var(--color-border);
+}
+.source-chip {
+  font-size: 0.72rem;
+  background: var(--bg-body);
+  color: var(--color-text-secondary);
+  padding: 3px 10px; border-radius: 6px;
+  border: 1px solid var(--color-border);
+}
+.pub-date {
+  font-size: 0.72rem; color: var(--color-text-muted);
+}
+
+/* --- Footer --- */
+.footer {
+  text-align: center; padding: 36px 24px;
+  color: var(--color-text-secondary); font-size: 0.8rem;
+  border-top: 1px solid var(--color-border);
+  margin-top: 48px;
+  background: rgba(255,255,255,0.5);
+}
+.footer a { color: var(--color-primary); text-decoration: none; }
+
+/* --- Back to Top Button --- */
+#back-to-top {
+  position: fixed; bottom: 28px; right: 28px;
+  width: 44px; height: 44px; border-radius: 50%;
+  background: var(--color-primary);
+  color: #fff; border: none; cursor: pointer;
+  box-shadow: var(--shadow-md);
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; transform: translateY(20px);
+  transition: all var(--transition-normal);
+  z-index: 200;
+}
+#back-to-top.show { opacity:1; transform: translateY(0); }
+#back-to-top:hover { background: #1e3a8a; transform: translateY(-2px); }
+
+/* --- Mobile Bottom Nav --- */
+.mobile-nav {
+  display: none;
+  position: fixed; bottom:0; left:0; right:0;
+  height: 56px; background: #fff;
+  border-top: 1px solid var(--color-border);
+  z-index: 1000; padding: 0;
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
+}
+.mobile-nav-item {
+  flex:1; display:flex; flex-direction:column;
+  align-items:center; justify-content:center;
+  text-decoration:none; gap:2px;
+  color: var(--color-text-muted);
+  font-size: 0.65rem; font-weight:500;
+  transition: color var(--transition-fast);
+}
+.mobile-nav-item svg { width:20px; height:20px; }
+.mobile-nav-item.active { color: var(--color-primary); }
+.mobile-nav-item.mn-s1.active { color: var(--s1); }
+.mobile-nav-item.mn-s2.active { color: var(--s2); }
+.mobile-nav-item.mn-s3.active { color: var(--s3); }
+.mobile-nav-item.mn-s4.active { color: var(--s4); }
+.mobile-nav-item.mn-s5.active { color: var(--s5); }
+
+/* --- Main Container --- */
+.main { max-width:1200px; margin:0 auto; padding:32px 24px; }
+
+/* --- Responsive: Tablet --- */
+@media (max-width:1024px) {
+  .cards-grid { grid-template-columns: repeat(2,1fr); }
+  .hero-decoration { display:none; }
+}
+
+/* --- Responsive: Mobile --- */
+@media (max-width:768px) {
+  .stats-grid { grid-template-columns: repeat(2,1fr); gap:10px; }
+  .cards-grid { grid-template-columns: 1fr; gap:14px; }
+  .hero { padding:36px 16px 28px; }
+  .hero h1 { letter-spacing:1px; }
+  .main { padding:20px 16px 80px; }
+  .nav-bar { padding:8px 12px; gap:6px; }
+  .nav-bar a { padding:7px 14px; font-size:0.82rem; }
+  .news-card { padding:16px; }
+  .card-title { font-size:0.92rem; }
+  .card-summary { font-size:0.8rem; }
+  .section-title { font-size:1.1rem; margin:28px 0 14px; }
+  .mobile-nav { display:flex; }
+  #back-to-top { bottom:72px; right:16px; }
+  .footer { padding-bottom:80px; }
+}
+
+/* --- Responsive: Small Mobile --- */
+@media (max-width:400px) {
+  .stat-card .stat-num { font-size:1.8rem; }
+  .stat-card .stat-label { font-size:0.7rem; }
+  .tag { font-size:0.65rem; padding:2px 8px; }
+}
+
+</style>
+</head>
+<body>
+
+<div id="progress-bar"></div>
+
+<!-- ========== HERO ========== -->
+<section class="hero">
+  <div class="hero-decoration">
+    <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <line x1="20" y1="180" x2="20" y2="40" stroke="currentColor" stroke-width="2.5"/>
+      <line x1="60" y1="180" x2="60" y2="65" stroke="currentColor" stroke-width="2.5"/>
+      <line x1="100" y1="180" x2="100" y2="20" stroke="currentColor" stroke-width="2.5"/>
+      <line x1="140" y1="180" x2="140" y2="85" stroke="currentColor" stroke-width="2.5"/>
+      <line x1="0" y1="180" x2="180" y2="180" stroke="currentColor" stroke-width="1.5"/>
+      <line x1="20" y1="40" x2="60" y2="65" stroke="currentColor" stroke-width="1" stroke-dasharray="6,3"/>
+      <line x1="60" y1="65" x2="100" y2="20" stroke="currentColor" stroke-width="1" stroke-dasharray="6,3"/>
+      <line x1="100" y1="20" x2="140" y2="85" stroke="currentColor" stroke-width="1" stroke-dasharray="6,3"/>
+      <rect x="14" y="90" width="16" height="90" stroke="currentColor" stroke-width="0.8" fill="none"/>
+      <rect x="54" y="110" width="16" height="70" stroke="currentColor" stroke-width="0.8" fill="none"/>
+      <rect x="94" y="70" width="16" height="110" stroke="currentColor" stroke-width="0.8" fill="none"/>
+      <rect x="134" y="120" width="16" height="60" stroke="currentColor" stroke-width="0.8" fill="none"/>
+      <line x1="0" y1="90" x2="180" y2="90" stroke="currentColor" stroke-width="0.3" stroke-dasharray="2,4"/>
+    </svg>
+  </div>
+  <h1>浙江省工程造价行业日报</h1>
+  <div class="date-row">2026年8月22日 &nbsp; 星期六</div>
+  <div class="stats-grid">
+    <div class="stat-card" onclick="document.getElementById('s1').scrollIntoView({behavior:'smooth'})">
+      <div class="stat-num" data-count="8">0</div>
+      <div class="stat-label">建设工程招标</div>
+    </div>
+    <div class="stat-card" onclick="document.getElementById('s2').scrollIntoView({behavior:'smooth'})">
+      <div class="stat-num" data-count="2">0</div>
+      <div class="stat-label">造价咨询招标</div>
+    </div>
+    <div class="stat-card" onclick="document.getElementById('s3').scrollIntoView({behavior:'smooth'})">
+      <div class="stat-num" data-count="10">0</div>
+      <div class="stat-label">政策法规/资讯</div>
+    </div>
+    <div class="stat-card" onclick="document.getElementById('s4').scrollIntoView({behavior:'smooth'})">
+      <div class="stat-num" data-count="5">0</div>
+      <div class="stat-label">数字化/研究前沿</div>
+    </div>
+    <div class="stat-card" onclick="document.getElementById('s5').scrollIntoView({behavior:'smooth'})">
+      <div class="stat-num" data-count="0">0</div>
+      <div class="stat-label">建设工程设计招标</div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== NAVIGATION ========== -->
+<nav class="nav-bar" id="navBar">
+  <a href="#s1" class="active">一、建设工程招标</a>
+  <a href="#s2">二、造价咨询招标</a>
+  <a href="#s3">三、政策法规/资讯</a>
+  <a href="#s4">四、数字化/研究前沿</a>
+  <a href="#s5">五、建设工程设计招标</a>
+</nav>
+
+<!-- ========== MAIN CONTENT ========== -->
+<div class="main">
+
+<div class="section-anchor" id="s1"></div>
+<div class="section-s1">
+<div class="section-title">
+  <svg class="sec-icon" viewBox="0 0 24 24" fill="none" stroke="var(--s1)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/><line x1="12" y1="6" x2="12" y2="10"/></svg>
+  一、建设工程招标 <span class="sec-count">8 条</span>
+</div>
+</div>
+<div class="cards-grid">
+  <div class="news-card" data-section="一">
+    <div class="card-header">
+      <span class="global-id">NO.1</span>
+    </div>
+    <div class="card-tags">
+      <span class="tag tag-sky">嘉兴</span>
+      <span class="tag tag-coral">装饰</span>
+    </div>
+    <h3 class="card-title"><a href="https://ggzy.zj.gov.cn/jyxxgk/002001/002001008/20260821/392b25b9-21f1-4357-b0d8-3c30b55f7a27.html" target="_blank" rel="noopener noreferrer">浙商银行嘉兴分行装修工程</a></h3>
+    <div class="card-footer">
+      <span class="source-chip">浙江省公共资源交易平台</span>
+      <span class="pub-date">昨天</span>
+    </div>
+  </div>
+
+  <div class="news-card" data-section="一">
+    <div class="card-header">
+      <span class="global-id">NO.2</span>
+    </div>
+    <div class="card-tags">
+      <span class="tag tag-emerald">宁波</span>
+      <span class="tag tag-orange">房建</span>
+    </div>
+    <h3 class="card-title"><a href="https://ggzy.zj.gov.cn/jyxxgk/002001/002001008/20260821/033b1614-994c-4828-99bb-09a0195a5476.html" target="_blank" rel="noopener noreferrer">宁波卫生职业技术学院体育馆和医技实训楼改造工程</a></h3>
+    <div class="card-footer">
+      <span class="source-chip">浙江省公共资源交易平台</span>
+      <span class="pub-date">昨天</span>
+    </div>
+  </div>
+
+  <div class="news-card" data-section="一">
+    <div class="card-header">
+      <span class="global-id">NO.3</span>
+    </div>
+    <div class="card-tags">
+      <span class="tag tag-indigo">浙江省</span>
+      <span class="tag tag-coral">装饰</span>
+    </div>
+    <h3 class="card-title"><a href="https://ggzy.zj.gov.cn/jyxxgk/002001/002001008/20260821/a48f8319-754f-4432-81e8-31c5cad0d50e.html" target="_blank" rel="noopener noreferrer">保障性租赁住房装修工程</a></h3>
+    <div class="card-footer">
+      <span class="source-chip">浙江省公共资源交易平台</span>
+      <span class="pub-date">昨天</span>
+    </div>
+  </div>
+
+  <div class="news-card" data-section="一">
+    <div class="card-header">
+      <span class="global-id">NO.4</span>
+    </div>
+    <div class="card-tags">
+      <span class="tag tag-blue">舟山</span>
+      <span class="tag tag-sky">交通</span>
+    </div>
+    <h3 class="card-title"><a href="https://ggzy.zj.gov.cn/jyxxgk/002001/002001008/20260821/3cba7068-2c8d-49c9-a112-24e318d93b12.html" target="_blank" rel="noopener noreferrer">定海区2026年普通国道隧道维修加固工程</a></h3>
+    <div class="card-footer">
+      <span class="source-chip">浙江省公共资源交易平台</span>
+      <span class="pub-date">昨天</span>
+    </div>
+  </div>
+
+  <div class="news-card" data-section="一">
+    <div class="card-header">
+      <span class="global-id">NO.5</span>
+    </div>
+    <div class="card-tags">
+      <span class="tag tag-teal">湖州</span>
+      <span class="tag tag-orange">房建</span>
+    </div>
+    <h3 class="card-title"><a href="https://ggzy.zj.gov.cn/jyxxgk/002001/002001008/20260821/c1106e7e-c2b6-4730-ae33-d515e1b5c837.html" target="_blank" rel="noopener noreferrer">长兴县中心城区老旧小区及对外配套基础设施改造提升项目</a></h3>
+    <div class="card-footer">
+      <span class="source-chip">浙江省公共资源交易平台</span>
+      <span class="pub-date">昨天</span>
+    </div>
+  </div>
+
+  <div class="news-card" data-section="一">
+    <div class="card-header">
+      <span class="global-id">NO.6</span>
+    </div>
+    <div class="card-tags">
+      <span class="tag tag-indigo">浙江省</span>
+      <span class="tag tag-sky">市政</span>
+    </div>
+    <h3 class="card-title"><a href="https://ggzy.zj.gov.cn/jyxxgk/002001/002001008/20260821/a1c08c8c-2614-43e8-9595-e16467941017.html" target="_blank" rel="noopener noreferrer">凤凰山生态农场道路提升改造工程（六横线南新村至东航养殖场）</a></h3>
+    <div class="card-footer">
+      <span class="source-chip">浙江省公共资源交易平台</span>
+      <span class="pub-date">昨天</span>
+    </div>
+  </div>
+
+  <div class="news-card" data-section="一">
+    <div class="card-header">
+      <span class="global-id">NO.7</span>
+    </div>
+    <div class="card-tags">
+      <span class="tag tag-green">丽水</span>
+      <span class="tag tag-slate">其他</span>
+    </div>
+    <h3 class="card-title"><a href="https://ggzy.zj.gov.cn/jyxxgk/002001/002001008/20260821/31294ae5-9fa3-410a-b9b6-7d16076cbf65.html" target="_blank" rel="noopener noreferrer">龙泉城乡发展一体化提升改造项目——2026年金角银边改造项目</a></h3>
+    <div class="card-footer">
+      <span class="source-chip">浙江省公共资源交易平台</span>
+      <span class="pub-date">昨天</span>
+    </div>
+  </div>
+
+  <div class="news-card" data-section="一">
+    <div class="card-header">
+      <span class="global-id">NO.8</span>
+    </div>
+    <div class="card-tags">
+      <span class="tag tag-sky">嘉兴</span>
+      <span class="tag tag-sky">市政</span>
+    </div>
+    <h3 class="card-title"><a href="https://ggzy.zj.gov.cn/jyxxgk/002001/002001008/20260821/ae1fb27b-0fbc-48f9-86eb-3b9afc4b5cbb.html" target="_blank" rel="noopener noreferrer">平湖市东片污水处理厂设施、设备提质改造项目</a></h3>
+    <div class="card-footer">
+      <span class="source-chip">浙江省公共资源交易平台</span>
+      <span class="pub-date">昨天</span>
+    </div>
+  </div>
+
+</div><!-- end s1 -->
+
+
+<div class="section-anchor" id="s2"></div>
+<div class="section-s2">
+<div class="section-title">
+  <svg class="sec-icon" viewBox="0 0 24 24" fill="none" stroke="var(--s2)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-4"/></svg>
+  二、造价咨询招标 <span class="sec-count">2 条</span>
+</div>
+</div>
+<div class="cards-grid">
+  <div class="news-card" data-section="二">
+    <div class="card-header">
+      <span class="global-id">NO.1</span>
+    </div>
+    <div class="card-tags">
+      <span class="tag tag-indigo">浙江省</span>
+      <span class="tag tag-amber">造价咨询</span>
+    </div>
+    <h3 class="card-title"><a href="https://zfcg.czt.zj.gov.cn/site/detail?categoryCode=ZcyAnnouncement&amp;parentId=600007&amp;articleId=sn1lHlt/uXYcPYfwy7gKqg==" target="_blank" rel="noopener noreferrer">浙江建科工程项目管理有限公司关于政府投资项目造价咨询审（复）核服务的竞争性磋商公告</a></h3>
+    <p class="card-summary">项目概况    政府投资项目造价咨询审（复）核服务采购项目的潜在供应商应在政采云平台线上获取获取（下载）采购文件，并于2026年08月31日14:30（北京时间）  
+          采购公告 | 政府采购公告 | 采购项目公告 | 非</p>
+    <div class="card-footer">
+      <span class="source-chip">浙江政府采购网</span>
+      <span class="pub-date">昨天</span>
+    </div>
+  </div>
+
+  <div class="news-card" data-section="二">
+    <div class="card-header">
+      <span class="global-id">NO.2</span>
+    </div>
+    <div class="card-tags">
+      <span class="tag tag-indigo">浙江省</span>
+      <span class="tag tag-amber">造价咨询</span>
+    </div>
+    <h3 class="card-title"><a href="https://zfcg.czt.zj.gov.cn/site/detail?categoryCode=ZcyAnnouncement&amp;parentId=600007&amp;articleId=UundCokZzGzZ59CBE/ThLQ==" target="_blank" rel="noopener noreferrer">浙江工商大学人工智能大楼（中外合作办学人工智能与数字化协同育人示范基地）全过程造价控制咨询服务合同公告</a></h3>
+    <p class="card-summary">一、合同编号：11N470009018202615202二、合同名称：浙江工商大学人工智能大楼（中外合作办学人工智能与数字化协同育人示范基地）全过程造价控制咨询服务合同三、项目编号：330000263030120000220  
+     </p>
+    <div class="card-footer">
+      <span class="source-chip">浙江政府采购网</span>
+      <span class="pub-date">昨天</span>
+    </div>
+  </div>
+
+</div><!-- end s2 -->
+
+
+<div class="section-anchor" id="s3"></div>
+<div class="section-s3">
+<div class="section-title">
+  <svg class="sec-icon" viewBox="0 0 24 24" fill="none" stroke="var(--s3)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+  三、政策法规/资讯 <span class="sec-count">10 条</span>
+</div>
+</div>
+<div class="cards-grid">
+  <div class="news-card" data-section="三">
+    <div class="card-header">
+      <span class="global-id">NO.1</span>
+    </div>
+    <div class="card-tags">
+      <span class="tag tag-slate">全国</span>
+      <span class="tag tag-purple">政策法规</span>
+    </div>
+    <h3 class="card-title"><a href="https://www.mohurd.gov.cn/xinwen/jsyw/art/2025/art_8a5a8c4234dd4a7bb8c733ffcc84a880.html" target="_blank" rel="noopener noreferrer">全国住房城乡建设工作会议在京召开</a></h3>
+    <div class="card-footer">
+      <span class="source-chip">住建部</span>
+      <span class="pub-date">今天</span>
+    </div>
+  </div>
+
+  <div class="news-card" data-section="三">
+    <div class="card-header">
+      <span class="global-id">NO.2</span>
+    </div>
+    <div class="card-tags">
+      <span class="tag tag-slate">全国</span>
+      <span class="tag tag-purple">政策法规</span>
+    </div>
+    <h3 class="card-title"><a href="https://www.mohurd.gov.cn/xinwen/jsyw/art/2025/art_7ac4bf3302704ec6a84ca1747f79a5c7.html" target="_blank" rel="noopener noreferrer">中国与中亚住房城乡建设交流合作迈上新台阶 2025中国—中亚建设部长会议在京召开</a></h3>
+    <div class="card-footer">
+      <span class="source-chip">住建部</span>
+      <span class="pub-date">今天</span>
+    </div>
+  </div>
+
+  <div class="news-card" data-section="三">
+    <div class="card-header">
+      <span class="global-id">NO.3</span>
+    </div>
+    <div class="card-tags">
+      <span class="tag tag-slate">全国</span>
+      <span class="tag tag-purple">政策法规</span>
+    </div>
+    <h3 class="card-title"><a href="https://www.mohurd.gov.cn/xinwen/jsyw/art/2025/art_09d559f5409e45aeaa9e874af395d2d5.html" target="_blank" rel="noopener noreferrer">【高质量完成“十四五”规划系列主题新闻发布会】介绍“十四五”时期住房城乡建设高质量发展成就</a></h3>
+    <div class="card-footer">
+      <span class="source-chip">住建部</span>
+      <span class="pub-date">今天</span>
+    </div>
+  </div>
+
+  <div class="news-card" data-section="三">
+    <div class="card-header">
+      <span class="global-id">NO.4</span>
+    </div>
+    <div class="card-tags">
+      <span class="tag tag-slate">全国</span>
+      <span class="tag tag-purple">政策法规</span>
+    </div>
+    <h3 class="card-title"><a href="https://www.mohurd.gov.cn/xinwen/jsyw/art/2024/art_303_778076.html" target="_blank" rel="noopener noreferrer">国务院政策例行吹风会：切实做好保交房工作配套政策有关情况</a></h3>
+    <div class="card-footer">
+      <span class="source-chip">住建部</span>
+      <span class="pub-date">今天</span>
+    </div>
+  </div>
+
+  <div class="news-card" data-section="三">
+    <div class="card-header">
+      <span class="global-id">NO.5</span>
+    </div>
+    <div class="card-tags">
+      <span class="tag tag-slate">全国</span>
+      <span class="tag tag-purple">政策法规</span>
+    </div>
+    <h3 class="card-title"><a href="https://www.mohurd.gov.cn/xinwen/jsyw/art/2026/art_41a4475aa5b0477aa829bb8144104792.html" target="_blank" rel="noopener noreferrer">国务院政策例行吹风会：《城市更新“十五五”规划》有关情况</a></h3>
+    <div class="card-footer">
+      <span class="source-chip">住建部</span>
+      <span class="pub-date">今天</span>
+    </div>
+  </div>
+
+  <div class="news-card" data-section="三">
+    <div class="card-header">
+      <span class="global-id">NO.6</span>
+    </div>
+    <div class="card-tags">
+      <span class="tag tag-slate">全国</span>
+      <span class="tag tag-purple">政策法规</span>
+    </div>
+    <h3 class="card-title"><a href="https://www.mohurd.gov.cn/xinwen/dfxx/art/2026/art_9c1b0a1b37fe41d9a9d6281dc26fa0c8.html" target="_blank" rel="noopener noreferrer">贵州规范省级建设工程企业资质许可管理</a></h3>
+    <div class="card-footer">
+      <span class="source-chip">住建部</span>
+      <span class="pub-date">昨天</span>
+    </div>
+  </div>
+
+  <div class="news-card" data-section="三">
+    <div class="card-header">
+      <span class="global-id">NO.7</span>
+    </div>
+    <div class="card-tags">
+      <span class="tag tag-slate">全国</span>
+      <span class="tag tag-purple">政策法规</span>
+    </div>
+    <h3 class="card-title"><a href="https://www.mohurd.gov.cn/xinwen/dfxx/art/2026/art_fcbe3bcea4b64b42b2c40ba5377824aa.html" target="_blank" rel="noopener noreferrer">海南举办农村房屋建设管理业务培训</a></h3>
+    <div class="card-footer">
+      <span class="source-chip">住建部</span>
+      <span class="pub-date">昨天</span>
+    </div>
+  </div>
+
+  <div class="news-card" data-section="三">
+    <div class="card-header">
+      <span class="global-id">NO.8</span>
+    </div>
+    <div class="card-tags">
+      <span class="tag tag-slate">全国</span>
+      <span class="tag tag-purple">政策法规</span>
+    </div>
+    <h3 class="card-title"><a href="https://www.mohurd.gov.cn/xinwen/dfxx/art/2026/art_dd5d2b572e96405faa131b79f16b4af4.html" target="_blank" rel="noopener noreferrer">广州出台政府投资管理办法 严禁建设“形象工程”“政绩工程”</a></h3>
+    <div class="card-footer">
+      <span class="source-chip">住建部</span>
+      <span class="pub-date">昨天</span>
+    </div>
+  </div>
+
+  <div class="news-card" data-section="三">
+    <div class="card-header">
+      <span class="global-id">NO.9</span>
+    </div>
+    <div class="card-tags">
+      <span class="tag tag-slate">全国</span>
+      <span class="tag tag-purple">政策法规</span>
+    </div>
+    <h3 class="card-title"><a href="https://www.gov.cn/zhengce/zczhjd/" target="_blank" rel="noopener noreferrer">重要政策举措及实施效果</a></h3>
+    <div class="card-footer">
+      <span class="source-chip">住建部</span>
+      <span class="pub-date">今天</span>
+    </div>
+  </div>
+
+  <div class="news-card" data-section="三">
+    <div class="card-header">
+      <span class="global-id">NO.10</span>
+    </div>
+    <div class="card-tags">
+      <span class="tag tag-slate">全国</span>
+      <span class="tag tag-purple">政策法规</span>
+    </div>
+    <h3 class="card-title"><a href="https://www.kscecs.com/home" target="_blank" rel="noopener noreferrer">住房城乡建设领域法规标准知识服务平台</a></h3>
+    <div class="card-footer">
+      <span class="source-chip">住建部</span>
+      <span class="pub-date">今天</span>
+    </div>
+  </div>
+
+</div><!-- end s3 -->
+
+
+<div class="section-anchor" id="s4"></div>
+<div class="section-s4">
+<div class="section-title">
+  <svg class="sec-icon" viewBox="0 0 24 24" fill="none" stroke="var(--s4)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+  四、数字化/研究前沿 <span class="sec-count">5 条</span>
+</div>
+</div>
+<div class="cards-grid">
+  <div class="news-card" data-section="四">
+    <div class="card-header">
+      <span class="global-id">NO.1</span>
+    </div>
+    <div class="card-tags">
+      <span class="tag tag-slate">全国</span>
+      <span class="tag tag-emerald">数字化工具</span>
+    </div>
+    <h3 class="card-title"><a href="http://www.ccea.pro/xwdt/xhdt/772771735765061.shtml" target="_blank" rel="noopener noreferrer">工程造价本科专业教材编写工作启动会在京召开</a></h3>
+    <div class="card-footer">
+      <span class="source-chip">中价协</span>
+      <span class="pub-date">今天</span>
+    </div>
+  </div>
+
+  <div class="news-card" data-section="四">
+    <div class="card-header">
+      <span class="global-id">NO.2</span>
+    </div>
+    <div class="card-tags">
+      <span class="tag tag-slate">全国</span>
+      <span class="tag tag-emerald">数字化工具</span>
+    </div>
+    <h3 class="card-title"><a href="http://www.ccea.pro/xwdt/xhdt/770637873078341.shtml" target="_blank" rel="noopener noreferrer">中国建设工程造价管理协会第八届理事会第三次会议暨第五次常务理事会在海口成功召开</a></h3>
+    <div class="card-footer">
+      <span class="source-chip">中价协</span>
+      <span class="pub-date">今天</span>
+    </div>
+  </div>
+
+  <div class="news-card" data-section="四">
+    <div class="card-header">
+      <span class="global-id">NO.3</span>
+    </div>
+    <div class="card-tags">
+      <span class="tag tag-slate">全国</span>
+      <span class="tag tag-emerald">数字化工具</span>
+    </div>
+    <h3 class="card-title"><a href="http://www.ccea.pro/xwdt/xhdt/770635632054341.shtml" target="_blank" rel="noopener noreferrer">全国建设工程造价管理协会负责人联席会议在海口顺利召开</a></h3>
+    <div class="card-footer">
+      <span class="source-chip">中价协</span>
+      <span class="pub-date">今天</span>
+    </div>
+  </div>
+
+  <div class="news-card" data-section="四">
+    <div class="card-header">
+      <span class="global-id">NO.4</span>
+    </div>
+    <div class="card-tags">
+      <span class="tag tag-indigo">浙江省</span>
+      <span class="tag tag-emerald">数字化工具</span>
+    </div>
+    <h3 class="card-title"><a href="https://www.zjjzyxh.com/NewsInfo.aspx?Id=16452" target="_blank" rel="noopener noreferrer">关于《建筑机器人操作安全标准》等5项团体标准立项的通知</a></h3>
+    <div class="card-footer">
+      <span class="source-chip">浙江省造价协会</span>
+      <span class="pub-date">今天</span>
+    </div>
+  </div>
+
+  <div class="news-card" data-section="四">
+    <div class="card-header">
+      <span class="global-id">NO.5</span>
+    </div>
+    <div class="card-tags">
+      <span class="tag tag-indigo">浙江省</span>
+      <span class="tag tag-emerald">数字化工具</span>
+    </div>
+    <h3 class="card-title"><a href="https://www.zjjzyxh.com/NewsInfo.aspx?Id=16431" target="_blank" rel="noopener noreferrer">关于浙江省智能建造创新创意大赛宁波邀请赛比赛结果的公示</a></h3>
+    <div class="card-footer">
+      <span class="source-chip">浙江省造价协会</span>
+      <span class="pub-date">今天</span>
+    </div>
+  </div>
+
+</div><!-- end s4 -->
+
+
+<div class="section-anchor" id="s5"></div>
+<div class="section-s5">
+<div class="section-title">
+  <svg class="sec-icon" viewBox="0 0 24 24" fill="none" stroke="var(--s5)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+  五、建设工程设计招标 <span class="sec-count">0 条</span>
+</div>
+</div>
+<div class="cards-grid">
+</div><!-- end s5 -->
+
+
+</div><!-- end .main -->
+
+<!-- ========== FOOTER ========== -->
+<div class="footer">
+  共 25 条资讯 &nbsp;·&nbsp; 数据来源：浙江省公共资源交易平台 / 中国政府采购网 / 浙江政府采购网 / 住建部 / 国务院 / 浙江省住建厅 / 行业媒体
+</div>
+
+<!-- ========== BACK TO TOP ========== -->
+<button id="back-to-top" aria-label="回到顶部">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
+
+<!-- ========== MOBILE BOTTOM NAV ========== -->
+<nav class="mobile-nav" id="mobileNav">
+  <a href="#" class="mobile-nav-item active" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+    <span>首页</span>
+  </a>
+  <a href="#s1" class="mobile-nav-item">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+    <span>招标</span>
+  </a>
+  <a href="#s2" class="mobile-nav-item">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-4"/></svg>
+    <span>造价</span>
+  </a>
+  <a href="#s3" class="mobile-nav-item">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+    <span>政策</span>
+  </a>
+  <a href="#s4" class="mobile-nav-item">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+    <span>数字</span>
+  </a>
+  <a href="#s5" class="mobile-nav-item">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+    <span>设计</span>
+  </a>
+</nav>
+
+<script>
+(function() {
+  // --- Progress bar ---
+  var bar = document.getElementById('progress-bar');
+  window.addEventListener('scroll', function() {
+    var h = document.documentElement.scrollHeight - window.innerHeight;
+    if (h > 0) bar.style.width = (Math.max(window.pageYOffset, window.scrollY) / h * 100) + '%';
+  });
+
+  // --- Scroll-in animation ---
+  var cards = document.querySelectorAll('.news-card');
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.08 });
+  cards.forEach(function(c) { observer.observe(c); });
+
+  // --- Number counter animation ---
+  var statNums = document.querySelectorAll('.stat-num[data-count]');
+  var countObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) {
+        var el = e.target;
+        var target = parseInt(el.getAttribute('data-count'), 10);
+        var current = 0;
+        var step = Math.max(1, Math.ceil(target / 20));
+        var timer = setInterval(function() {
+          current += step;
+          if (current >= target) { current = target; clearInterval(timer); }
+          el.textContent = current;
+        }, 40);
+        countObserver.unobserve(el);
+      }
+    });
+  }, { threshold: 0.5 });
+  statNums.forEach(function(n) { countObserver.observe(n); });
+
+  // --- Nav highlight (desktop) ---
+  var sections = ['s1','s2','s3','s4','s5'];
+  var navLinks = document.querySelectorAll('.nav-bar a');
+  var mobileNavItems = document.querySelectorAll('.mobile-nav-item');
+
+  window.addEventListener('scroll', function() {
+    var scrollPos = Math.max(window.pageYOffset, window.scrollY) + 140;
+    var activeIdx = -1;
+    for (var i = sections.length - 1; i >= 0; i--) {
+      var sec = document.getElementById(sections[i]);
+      if (sec && sec.offsetTop <= scrollPos) { activeIdx = i; break; }
+    }
+    navLinks.forEach(function(a) { a.classList.remove('active'); });
+    if (activeIdx >= 0 && navLinks[activeIdx]) navLinks[activeIdx].classList.add('active');
+    mobileNavItems.forEach(function(a) { a.classList.remove('active'); });
+    if (activeIdx >= 0 && mobileNavItems[activeIdx + 1]) {
+      mobileNavItems[activeIdx + 1].classList.add('active');
+    } else if (activeIdx < 0 && mobileNavItems[0]) {
+      mobileNavItems[0].classList.add('active');
+    }
+  });
+
+  // --- Back to top ---
+  var btt = document.getElementById('back-to-top');
+  window.addEventListener('scroll', function() {
+    if (Math.max(window.pageYOffset, window.scrollY) > 400) {
+      btt.classList.add('show');
+    } else {
+      btt.classList.remove('show');
+    }
+  });
+  btt.addEventListener('click', function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  // --- Whole card click ---
+  document.querySelectorAll('.news-card').forEach(function(card) {
+    card.addEventListener('click', function(e) {
+      if (e.target.tagName === 'A') return;
+      var link = card.querySelector('.card-title a');
+      if (link && link.href) window.open(link.href, '_blank', 'noopener,noreferrer');
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
